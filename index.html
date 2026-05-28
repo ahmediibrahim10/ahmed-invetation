@@ -141,3 +141,268 @@
 
         .slider-container {
             display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .slider-btn {
+            background-color: #f472b6;
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .slider-btn:hover {
+            background-color: #db2777;
+        }
+
+        .image-wrapper {
+            width: 250px;
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 4px solid #f472b6;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            animation: fade 0.6s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fade {
+            from { opacity: 0.4; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* --- تصميم المعاكسة الشعبية --- */
+        .shaabi-flirt {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fce7f3; /* لون بينك فاتح أوي */
+            border: 2px dashed #f472b6; /* برواز منقط */
+            border-radius: 15px;
+            font-size: 1.3em;
+            color: #be185d;
+            font-weight: bold;
+            line-height: 1.6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            animation: fadeIn 1s ease 1.5s both; /* هيظهر ببطء بعد الصور */
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div id="login-screen">
+        <h1>ايه كلمه السر؟</h1>
+        <input type="text" id="password-input" placeholder="كلمة السر هنا...">
+        <button class="btn" id="login-btn">دخول</button>
+        <p id="login-feedback" class="feedback"></p>
+    </div>
+
+    <div id="quiz-screen">
+        <h1>كدا صح يا قلبي! 💖</h1>
+        <p>جاوبي عشان تشوفي المفاجأة..</p>
+
+        <div class="quiz-question" id="q1-container">
+            <h2>1- اكتر حاجه بحبها فيكي ايه؟</h2>
+            <div class="choices">
+                <label class="choice"><input type="radio" name="q1" value="فخادك">فخادك</label>
+                <label class="choice"><input type="radio" name="q1" value="قلبك">قلبك</label>
+                <label class="choice"><input type="radio" name="q1" value="عيونك">عيونك</label>
+                <label class="choice"><input type="radio" name="q1" value="كل حاجه">كل حاجه</label>
+            </div>
+            <p id="q1-feedback" class="feedback"></p>
+        </div>
+
+        <div class="quiz-question" id="q2-container">
+            <h2>2- نفسي اعمل معاكي ايه بكرا؟</h2>
+            <div class="choices">
+                <label class="choice"><input type="radio" name="q2" value="واحد">واحد</label>
+                <label class="choice"><input type="radio" name="q2" value="اتنين">اتنين</label>
+                <label class="choice"><input type="radio" name="q2" value="تلاته">تلاته</label>
+                <label class="choice"><input type="radio" name="q2" value="اربعه">اربعه</label>
+            </div>
+            <p id="q2-feedback" class="feedback"></p>
+        </div>
+
+        <div class="quiz-question" id="q3-container">
+            <h2>3- يوم عيد ميلادي الغلط ايه؟</h2>
+            <div class="choices">
+                <label class="choice"><input type="radio" name="q3" value="28/10/2007">28/10/2007</label>
+                <label class="choice"><input type="radio" name="q3" value="28/10/2007_alt">28/10/2007</label> 
+                <label class="choice"><input type="radio" name="q3" value="28/9/2007">28/9/2007</label>
+                <label class="choice"><input type="radio" name="q3" value="14/10/2007">14/10/2007</label>
+            </div>
+            <p id="q3-feedback" class="feedback"></p>
+        </div>
+    </div>
+
+    <div id="gallery-screen">
+        <h1 class="gallery-title">بحبك 💖</h1>
+        
+        <div class="slider-container">
+            <button class="slider-btn" id="next-btn">&#10095;</button> 
+            
+            <div class="image-wrapper">
+                <img src="mariam/image_841469.jpg" class="slide active" alt="مريومتي 1">
+                <img src="mariam/image_841483.jpg" class="slide" alt="مريومتي 2">
+                <img src="mariam/image_841487.jpg" class="slide" alt="مريومتي 3">
+                <img src="mariam/image_8414a1.jpg" class="slide" alt="مريومتي 4">
+            </div>
+
+            <button class="slider-btn" id="prev-btn">&#10094;</button>
+        </div>
+
+        <div class="shaabi-flirt">
+            يا بت ده انتي بطل العالم في الحلاوة! 🍓 ده انا عيني بتزغرد لما بتشوفك.. ولو لفيت الكوكب مش هلاقي حتة قشطة زيك كدا. ده انتي وتد قلبي ومزاجي العالي، ربنا يخليكي ليا يا أحلى مريومة في الحتة وكل الحتت 🔥💖
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // الشاشات
+        const loginScreen = document.getElementById('login-screen');
+        const quizScreen = document.getElementById('quiz-screen');
+        const galleryScreen = document.getElementById('gallery-screen');
+
+        // عناصر تسجيل الدخول
+        const passwordInput = document.getElementById('password-input');
+        const loginBtn = document.getElementById('login-btn');
+        const loginFeedback = document.getElementById('login-feedback');
+
+        // حاويات الأسئلة
+        const q2Container = document.getElementById('q2-container');
+        const q3Container = document.getElementById('q3-container');
+
+        const q1Feedback = document.getElementById('q1-feedback');
+        const q2Feedback = document.getElementById('q2-feedback');
+        const q3Feedback = document.getElementById('q3-feedback');
+
+        // منطق الدخول (كلمة السر)
+        loginBtn.addEventListener('click', () => {
+            const enteredPassword = passwordInput.value.trim();
+            if (enteredPassword === 'وريني فخادك') {
+                loginScreen.style.display = 'none';
+                quizScreen.style.display = 'block';
+            } else {
+                loginFeedback.className = 'feedback';
+                loginFeedback.textContent = 'غلط يا مريومتي';
+            }
+        });
+
+        // منطق السؤال الأول
+        const q1Radios = document.querySelectorAll('input[name="q1"]');
+        q1Radios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'كل حاجه') {
+                    q1Feedback.className = 'feedback success-msg';
+                    q1Feedback.textContent = 'صح يا روحي 💖';
+                    q2Container.style.display = 'block'; 
+                } else {
+                    q1Feedback.className = 'feedback';
+                    q1Feedback.textContent = 'احا يا مريومتي';
+                    q2Container.style.display = 'none'; 
+                    q3Container.style.display = 'none';
+                }
+            });
+        });
+
+        // منطق السؤال التاني
+        const q2Radios = document.querySelectorAll('input[name="q2"]');
+        q2Radios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'اتنين') {
+                    q2Feedback.className = 'feedback success-msg';
+                    q2Feedback.textContent = 'شاطرة يا قلبي 🥰';
+                    q3Container.style.display = 'block'; 
+                } else {
+                    q2Feedback.className = 'feedback';
+                    q2Feedback.textContent = 'مش تنين انا';
+                    q3Container.style.display = 'none';
+                }
+            });
+        });
+
+        // منطق السؤال التالت
+        const q3Radios = document.querySelectorAll('input[name="q3"]');
+        q3Radios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === '28/9/2007') {
+                    q3Feedback.className = 'feedback success-msg';
+                    q3Feedback.textContent = 'أخيراً! ثواني هوريكي المفاجأة...';
+                    
+                    setTimeout(() => {
+                        quizScreen.style.display = 'none';
+                        galleryScreen.style.display = 'block';
+                    }, 1500);
+                } else {
+                    q3Feedback.className = 'feedback';
+                    q3Feedback.textContent = 'يومك اسود';
+                }
+            });
+        });
+
+        // --- منطق السلايدر (تقليب الصور) ---
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+
+        function showSlide(index) {
+            // إخفاء كل الصور
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            // تظبيط الـ Index لو عدى الصور أو نزل تحت الصفر
+            if (index >= slides.length) {
+                currentSlideIndex = 0;
+            } else if (index < 0) {
+                currentSlideIndex = slides.length - 1;
+            } else {
+                currentSlideIndex = index;
+            }
+            
+            // إظهار الصورة المطلوبة
+            slides[currentSlideIndex].classList.add('active');
+        }
+
+        // زرار التالي
+        nextBtn.addEventListener('click', () => {
+            showSlide(currentSlideIndex + 1);
+        });
+
+        // زرار السابق
+        prevBtn.addEventListener('click', () => {
+            showSlide(currentSlideIndex - 1);
+        });
+    });
+</script>
+
+</body>
+</html>
